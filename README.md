@@ -21,15 +21,13 @@
 <a name="module_get-own-enumerable-property-symbols-x"></a>
 
 ## get-own-enumerable-property-symbols-x
+
 Like Object.getOwnPropertySymbols but gets only enumerable properties.
 
-**Version**: 1.0.0  
-**Author**: Xotic750 <Xotic750@gmail.com>  
-**License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
-**Copyright**: Xotic750  
 <a name="exp_module_get-own-enumerable-property-symbols-x--module.exports"></a>
 
 ### `module.exports(target)` ⇒ <code>Array</code> ⏏
+
 This method returns only the enumerable own property symbols of an object.
 
 **Kind**: Exported function  
@@ -38,28 +36,28 @@ This method returns only the enumerable own property symbols of an object.
 
 - <code>typeError</code> - If target is null or undefined.
 
-
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description |
+| ------ | ------------------- | ----------- |
 | target | <code>Object</code> | The target. |
 
-**Example**  
+**Example**
+
 ```js
-var getOwnEnumerablePropertySymbols = require('get-own-enumerable-property-symbols-x');
+import getOwnEnumerablePropertySymbols from 'get-own-enumerable-property-symbols-x';
 
-var obj = { bar: 1, foo: 2 };
+var obj = {bar: 1, foo: 2};
 
-var symbol1 = Symbol('first');
+const symbol1 = Symbol('first');
 Object.defineProperty(obj, symbo1l, {
   enumerable: false,
-  value: 'first'
+  value: 'first',
 });
 
-var symbol2 = Symbol('second');
+const symbol2 = Symbol('second');
 Object.defineProperty(obj, symbol2, {
   enumerable: true,
-  value: 'second'
+  value: 'second',
 });
 
-getOwnEnumerablePropertySymbols(obj); // [symbol2]
+console.log(getOwnEnumerablePropertySymbols(obj)); // [symbol2]
 ```
