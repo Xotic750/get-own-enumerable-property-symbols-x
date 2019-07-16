@@ -12,7 +12,7 @@ if (hasSymbolSupport) {
   });
 
   const nonEnum = Object.getOwnPropertySymbols(testObj);
-  /* eslint-disable-next-line no-prototype-builtins */
+
   definedNonEnumerable = nonEnum.length === 1 && Object.propertyIsEnumerable(testObj, nonEnum) === false;
 
   testObj = Object.defineProperty({}, Symbol('second'), {
