@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-15T15:49:39.939Z",
+  "date": "2019-07-16T11:01:56.973Z",
   "describe": "",
   "description": "Like Object.getOwnPropertySymbols but gets only enumerable properties.",
   "file": "get-own-enumerable-property-symbols-x.js",
-  "hash": "bdc2e581654295e0f01d",
+  "hash": "5ca12495c7cad45d4511",
   "license": "MIT",
-  "version": "2.0.0"
+  "version": "2.0.1"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -353,7 +353,7 @@ module.exports = function hasSymbols() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/to-object-x/node_modules/is-nil-x/dist/is-nil-x.esm.js
+// CONCATENATED MODULE: ./node_modules/is-nil-x/dist/is-nil-x.esm.js
 /**
  * Checks if `value` is `null` or `undefined`.
  *
@@ -366,7 +366,7 @@ function isNil(value) {
 }
 
 
-// CONCATENATED MODULE: ./node_modules/to-object-x/node_modules/require-object-coercible-x/dist/require-object-coercible-x.esm.js
+// CONCATENATED MODULE: ./node_modules/require-object-coercible-x/dist/require-object-coercible-x.esm.js
 
 /**
  * The abstract operation RequireObjectCoercible throws an error if argument
@@ -403,7 +403,7 @@ function toObject(value) {
 }
 
 
-// CONCATENATED MODULE: ./node_modules/array-filter-x/node_modules/attempt-x/dist/attempt-x.esm.js
+// CONCATENATED MODULE: ./node_modules/attempt-x/dist/attempt-x.esm.js
 /**
  * This method attempts to invoke the function, returning either the result or
  * the caught error object. Any additional arguments are provided to the
@@ -478,45 +478,14 @@ function splitIfBoxedBug(value) {
 var is_symbol = __webpack_require__(0);
 var is_symbol_default = /*#__PURE__*/__webpack_require__.n(is_symbol);
 
-// CONCATENATED MODULE: ./node_modules/to-primitive-x/node_modules/attempt-x/dist/attempt-x.esm.js
-/**
- * This method attempts to invoke the function, returning either the result or
- * the caught error object. Any additional arguments are provided to the
- * function when it's invoked.
- *
- * @param {Function} [fn] - The function to attempt.
- * @param {...*} [args] - The arguments to invoke the function with.
- * @returns {object} Returns an object of the result.
- */
-function attempt_x_esm_attempt(fn) {
-  try {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    return {
-      threw: false,
-
-      /* eslint-disable-next-line babel/no-invalid-this */
-      value: fn.apply(this, args)
-    };
-  } catch (e) {
-    return {
-      threw: true,
-      value: e
-    };
-  }
-}
-
-
-// CONCATENATED MODULE: ./node_modules/to-primitive-x/node_modules/has-symbol-support-x/dist/has-symbol-support-x.esm.js
+// CONCATENATED MODULE: ./node_modules/has-symbol-support-x/dist/has-symbol-support-x.esm.js
 var has_symbol_support_x_esm_this = undefined;
 
 function _newArrowCheck(innerThis, boundThis) { if (innerThis !== boundThis) { throw new TypeError("Cannot instantiate an arrow function"); } }
 
 
 
-var hasSymbolSupport = attempt_x_esm_attempt(function () {
+var hasSymbolSupport = attempt(function () {
   _newArrowCheck(this, has_symbol_support_x_esm_this);
 
   /* eslint-disable-next-line compat/compat */
@@ -539,37 +508,6 @@ var is_primitive_default = /*#__PURE__*/__webpack_require__.n(is_primitive);
 // EXTERNAL MODULE: ./node_modules/is-date-object/index.js
 var is_date_object = __webpack_require__(4);
 var is_date_object_default = /*#__PURE__*/__webpack_require__.n(is_date_object);
-
-// CONCATENATED MODULE: ./node_modules/is-function-x/node_modules/attempt-x/dist/attempt-x.esm.js
-/**
- * This method attempts to invoke the function, returning either the result or
- * the caught error object. Any additional arguments are provided to the
- * function when it's invoked.
- *
- * @param {Function} [fn] - The function to attempt.
- * @param {...*} [args] - The arguments to invoke the function with.
- * @returns {object} Returns an object of the result.
- */
-function dist_attempt_x_esm_attempt(fn) {
-  try {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    return {
-      threw: false,
-
-      /* eslint-disable-next-line babel/no-invalid-this */
-      value: fn.apply(this, args)
-    };
-  } catch (e) {
-    return {
-      threw: true,
-      value: e
-    };
-  }
-}
-
 
 // CONCATENATED MODULE: ./node_modules/to-boolean-x/dist/to-boolean-x.esm.js
 /**
@@ -620,60 +558,6 @@ function toStringTag(value) {
 }
 
 
-// CONCATENATED MODULE: ./node_modules/has-to-string-tag-x/node_modules/attempt-x/dist/attempt-x.esm.js
-/**
- * This method attempts to invoke the function, returning either the result or
- * the caught error object. Any additional arguments are provided to the
- * function when it's invoked.
- *
- * @param {Function} [fn] - The function to attempt.
- * @param {...*} [args] - The arguments to invoke the function with.
- * @returns {object} Returns an object of the result.
- */
-function attempt_x_dist_attempt_x_esm_attempt(fn) {
-  try {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    return {
-      threw: false,
-
-      /* eslint-disable-next-line babel/no-invalid-this */
-      value: fn.apply(this, args)
-    };
-  } catch (e) {
-    return {
-      threw: true,
-      value: e
-    };
-  }
-}
-
-
-// CONCATENATED MODULE: ./node_modules/has-to-string-tag-x/node_modules/has-symbol-support-x/dist/has-symbol-support-x.esm.js
-var dist_has_symbol_support_x_esm_this = undefined;
-
-function has_symbol_support_x_esm_newArrowCheck(innerThis, boundThis) { if (innerThis !== boundThis) { throw new TypeError("Cannot instantiate an arrow function"); } }
-
-
-
-var has_symbol_support_x_esm_hasSymbolSupport = attempt_x_dist_attempt_x_esm_attempt(function () {
-  has_symbol_support_x_esm_newArrowCheck(this, dist_has_symbol_support_x_esm_this);
-
-  /* eslint-disable-next-line compat/compat */
-  return typeof Symbol === 'function' && is_symbol_default()(Symbol(''));
-}.bind(undefined));
-/**
- * Indicates if `Symbol`exists and creates the correct type.
- * `true`, if it exists and creates the correct type, otherwise `false`.
- *
- * @type boolean
- */
-
-/* harmony default export */ var dist_has_symbol_support_x_esm = (has_symbol_support_x_esm_hasSymbolSupport.threw === false && has_symbol_support_x_esm_hasSymbolSupport.value === true);
-
-
 // CONCATENATED MODULE: ./node_modules/has-to-string-tag-x/dist/has-to-string-tag-x.esm.js
 
 
@@ -684,42 +568,9 @@ var has_symbol_support_x_esm_hasSymbolSupport = attempt_x_dist_attempt_x_esm_att
  * @type boolean
  */
 
-/* harmony default export */ var has_to_string_tag_x_esm = (dist_has_symbol_support_x_esm &&
+/* harmony default export */ var has_to_string_tag_x_esm = (has_symbol_support_x_esm &&
 /* eslint-disable-next-line compat/compat */
 is_symbol_default()(Symbol.toStringTag));
-
-
-// CONCATENATED MODULE: ./node_modules/require-coercible-to-string-x/node_modules/is-nil-x/dist/is-nil-x.esm.js
-/**
- * Checks if `value` is `null` or `undefined`.
- *
- * @param {*} [value] - The value to check.
- * @returns {boolean} Returns `true` if `value` is nullish, else `false`.
- */
-function is_nil_x_esm_isNil(value) {
-  /* eslint-disable-next-line lodash/prefer-is-nil */
-  return value === null || typeof value === 'undefined';
-}
-
-
-// CONCATENATED MODULE: ./node_modules/require-coercible-to-string-x/node_modules/require-object-coercible-x/dist/require-object-coercible-x.esm.js
-
-/**
- * The abstract operation RequireObjectCoercible throws an error if argument
- * is a value that cannot be converted to an Object using ToObject.
- *
- * @param {*} [value] - The `value` to check.
- * @throws {TypeError} If `value` is a `null` or `undefined`.
- * @returns {string} The `value`.
- */
-
-function require_object_coercible_x_esm_requireObjectCoercible(value) {
-  if (is_nil_x_esm_isNil(value)) {
-    throw new TypeError("Cannot call method on ".concat(value));
-  }
-
-  return value;
-}
 
 
 // CONCATENATED MODULE: ./node_modules/to-string-x/dist/to-string-x.esm.js
@@ -755,7 +606,7 @@ function ToString(value) {
  */
 
 function requireCoercibleToString(value) {
-  return ToString(require_object_coercible_x_esm_requireObjectCoercible(value));
+  return ToString(requireObjectCoercible(value));
 }
 
 
@@ -1241,7 +1092,7 @@ var genTag = '[object GeneratorFunction]';
 var asyncTag = '[object AsyncFunction]';
 var ctrRx = /^class /;
 var test = ctrRx.test;
-var hasNativeClass = dist_attempt_x_esm_attempt(function () {
+var hasNativeClass = attempt(function () {
   is_function_x_esm_newArrowCheck(this, is_function_x_esm_this);
 
   /* eslint-disable-next-line no-new-func */
@@ -1253,7 +1104,7 @@ var testClassstring = function _testClassstring(value) {
 };
 
 var isES6ClassFn = function isES6ClassFunc(value) {
-  var result = dist_attempt_x_esm_attempt(testClassstring, value);
+  var result = attempt(testClassstring, value);
   return result.threw === false && result.value;
 };
 /**
@@ -1272,7 +1123,7 @@ var tryFuncToString = function funcToString(value, allowClass) {
     return false;
   }
 
-  return dist_attempt_x_esm_attempt.call(value, fToString).threw === false;
+  return attempt.call(value, fToString).threw === false;
 };
 /**
  * Checks if `value` is classified as a `Function` object.
@@ -1299,39 +1150,6 @@ function isFunction(value, allowClass) {
 
   var strTag = toStringTag(value);
   return strTag === funcTag || strTag === genTag || strTag === asyncTag;
-}
-
-
-// CONCATENATED MODULE: ./node_modules/to-primitive-x/node_modules/is-nil-x/dist/is-nil-x.esm.js
-/**
- * Checks if `value` is `null` or `undefined`.
- *
- * @param {*} [value] - The value to check.
- * @returns {boolean} Returns `true` if `value` is nullish, else `false`.
- */
-function dist_is_nil_x_esm_isNil(value) {
-  /* eslint-disable-next-line lodash/prefer-is-nil */
-  return value === null || typeof value === 'undefined';
-}
-
-
-// CONCATENATED MODULE: ./node_modules/to-primitive-x/node_modules/require-object-coercible-x/dist/require-object-coercible-x.esm.js
-
-/**
- * The abstract operation RequireObjectCoercible throws an error if argument
- * is a value that cannot be converted to an Object using ToObject.
- *
- * @param {*} [value] - The `value` to check.
- * @throws {TypeError} If `value` is a `null` or `undefined`.
- * @returns {string} The `value`.
- */
-
-function dist_require_object_coercible_x_esm_requireObjectCoercible(value) {
-  if (dist_is_nil_x_esm_isNil(value)) {
-    throw new TypeError("Cannot call method on ".concat(value));
-  }
-
-  return value;
 }
 
 
@@ -1373,7 +1191,7 @@ var orderLength = 2;
  */
 
 var ordinaryToPrimitive = function _ordinaryToPrimitive(ordinary, hint) {
-  dist_require_object_coercible_x_esm_requireObjectCoercible(ordinary);
+  requireObjectCoercible(ordinary);
 
   if (typeof hint !== 'string' || hint !== NUMBER && hint !== STRING) {
     throw new TypeError('hint must be "string" or "number"');
@@ -1407,7 +1225,7 @@ var ordinaryToPrimitive = function _ordinaryToPrimitive(ordinary, hint) {
 var getMethod = function _getMethod(object, property) {
   var func = object[property];
 
-  if (dist_is_nil_x_esm_isNil(func) === false) {
+  if (isNil(func) === false) {
     if (isFunction(func) === false) {
       throw new TypeError("".concat(func, " returned for property ").concat(property, " of object ").concat(object, " is not a function"));
     }
@@ -1879,66 +1697,12 @@ function toLength2018(value) {
 }
 
 
-// CONCATENATED MODULE: ./node_modules/to-string-symbols-supported-x/node_modules/attempt-x/dist/attempt-x.esm.js
-/**
- * This method attempts to invoke the function, returning either the result or
- * the caught error object. Any additional arguments are provided to the
- * function when it's invoked.
- *
- * @param {Function} [fn] - The function to attempt.
- * @param {...*} [args] - The arguments to invoke the function with.
- * @returns {object} Returns an object of the result.
- */
-function node_modules_attempt_x_dist_attempt_x_esm_attempt(fn) {
-  try {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    return {
-      threw: false,
-
-      /* eslint-disable-next-line babel/no-invalid-this */
-      value: fn.apply(this, args)
-    };
-  } catch (e) {
-    return {
-      threw: true,
-      value: e
-    };
-  }
-}
-
-
-// CONCATENATED MODULE: ./node_modules/to-string-symbols-supported-x/node_modules/has-symbol-support-x/dist/has-symbol-support-x.esm.js
-var has_symbol_support_x_dist_has_symbol_support_x_esm_this = undefined;
-
-function dist_has_symbol_support_x_esm_newArrowCheck(innerThis, boundThis) { if (innerThis !== boundThis) { throw new TypeError("Cannot instantiate an arrow function"); } }
-
-
-
-var dist_has_symbol_support_x_esm_hasSymbolSupport = node_modules_attempt_x_dist_attempt_x_esm_attempt(function () {
-  dist_has_symbol_support_x_esm_newArrowCheck(this, has_symbol_support_x_dist_has_symbol_support_x_esm_this);
-
-  /* eslint-disable-next-line compat/compat */
-  return typeof Symbol === 'function' && is_symbol_default()(Symbol(''));
-}.bind(undefined));
-/**
- * Indicates if `Symbol`exists and creates the correct type.
- * `true`, if it exists and creates the correct type, otherwise `false`.
- *
- * @type boolean
- */
-
-/* harmony default export */ var has_symbol_support_x_dist_has_symbol_support_x_esm = (dist_has_symbol_support_x_esm_hasSymbolSupport.threw === false && dist_has_symbol_support_x_esm_hasSymbolSupport.value === true);
-
-
 // CONCATENATED MODULE: ./node_modules/to-string-symbols-supported-x/dist/to-string-symbols-supported-x.esm.js
 
 
 /* eslint-disable-next-line compat/compat */
 
-var pToString = has_symbol_support_x_dist_has_symbol_support_x_esm && Symbol.prototype.toString;
+var pToString = has_symbol_support_x_esm && Symbol.prototype.toString;
 var isSymbolFn = typeof pToString === 'function' && is_symbol_default.a;
 /** @type {Function} */
 
@@ -2165,60 +1929,6 @@ var arrayFilter = $filter;
 /* harmony default export */ var array_filter_x_esm = (arrayFilter);
 
 
-// CONCATENATED MODULE: ./node_modules/attempt-x/dist/attempt-x.esm.js
-/**
- * This method attempts to invoke the function, returning either the result or
- * the caught error object. Any additional arguments are provided to the
- * function when it's invoked.
- *
- * @param {Function} [fn] - The function to attempt.
- * @param {...*} [args] - The arguments to invoke the function with.
- * @returns {object} Returns an object of the result.
- */
-function node_modules_attempt_x_dist_attempt_x_esm_attempt_0(fn) {
-  try {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    return {
-      threw: false,
-
-      /* eslint-disable-next-line babel/no-invalid-this */
-      value: fn.apply(this, args)
-    };
-  } catch (e) {
-    return {
-      threw: true,
-      value: e
-    };
-  }
-}
-
-
-// CONCATENATED MODULE: ./node_modules/has-symbol-support-x/dist/has-symbol-support-x.esm.js
-var node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm_this = undefined;
-
-function has_symbol_support_x_dist_has_symbol_support_x_esm_newArrowCheck(innerThis, boundThis) { if (innerThis !== boundThis) { throw new TypeError("Cannot instantiate an arrow function"); } }
-
-
-
-var has_symbol_support_x_dist_has_symbol_support_x_esm_hasSymbolSupport = node_modules_attempt_x_dist_attempt_x_esm_attempt_0(function () {
-  has_symbol_support_x_dist_has_symbol_support_x_esm_newArrowCheck(this, node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm_this);
-
-  /* eslint-disable-next-line compat/compat */
-  return typeof Symbol === 'function' && is_symbol_default()(Symbol(''));
-}.bind(undefined));
-/**
- * Indicates if `Symbol`exists and creates the correct type.
- * `true`, if it exists and creates the correct type, otherwise `false`.
- *
- * @type boolean
- */
-
-/* harmony default export */ var node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm = (has_symbol_support_x_dist_has_symbol_support_x_esm_hasSymbolSupport.threw === false && has_symbol_support_x_dist_has_symbol_support_x_esm_hasSymbolSupport.value === true);
-
-
 // CONCATENATED MODULE: ./node_modules/get-own-property-symbols-x/dist/get-own-property-symbols-x.esm.js
 
 
@@ -2226,14 +1936,14 @@ var has_symbol_support_x_dist_has_symbol_support_x_esm_hasSymbolSupport = node_m
 var nativeGOPS = {}.constructor.getOwnPropertySymbols;
 var get_own_property_symbols_x_esm_isWorking;
 
-if (node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm && nativeGOPS && typeof nativeGOPS === 'function') {
+if (has_symbol_support_x_esm && nativeGOPS && typeof nativeGOPS === 'function') {
   /* eslint-disable-next-line compat/compat */
   var get_own_property_symbols_x_esm_symbol = Symbol('');
   var testObj = {
     a: 1
   };
   testObj[get_own_property_symbols_x_esm_symbol] = 2;
-  var r = node_modules_attempt_x_dist_attempt_x_esm_attempt_0(nativeGOPS, testObj);
+  var r = attempt(nativeGOPS, testObj);
   get_own_property_symbols_x_esm_isWorking = r.threw === false && r.value && r.value.length === 1 && r.value[0] === get_own_property_symbols_x_esm_symbol;
 }
 /**
@@ -2253,60 +1963,6 @@ function getOwnPropertySymbols(obj) {
 }
 
 
-// CONCATENATED MODULE: ./node_modules/to-property-key-x/node_modules/attempt-x/dist/attempt-x.esm.js
-/**
- * This method attempts to invoke the function, returning either the result or
- * the caught error object. Any additional arguments are provided to the
- * function when it's invoked.
- *
- * @param {Function} [fn] - The function to attempt.
- * @param {...*} [args] - The arguments to invoke the function with.
- * @returns {object} Returns an object of the result.
- */
-function to_property_key_x_node_modules_attempt_x_dist_attempt_x_esm_attempt(fn) {
-  try {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    return {
-      threw: false,
-
-      /* eslint-disable-next-line babel/no-invalid-this */
-      value: fn.apply(this, args)
-    };
-  } catch (e) {
-    return {
-      threw: true,
-      value: e
-    };
-  }
-}
-
-
-// CONCATENATED MODULE: ./node_modules/to-property-key-x/node_modules/has-symbol-support-x/dist/has-symbol-support-x.esm.js
-var to_property_key_x_node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm_this = undefined;
-
-function node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm_newArrowCheck(innerThis, boundThis) { if (innerThis !== boundThis) { throw new TypeError("Cannot instantiate an arrow function"); } }
-
-
-
-var node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm_hasSymbolSupport = to_property_key_x_node_modules_attempt_x_dist_attempt_x_esm_attempt(function () {
-  node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm_newArrowCheck(this, to_property_key_x_node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm_this);
-
-  /* eslint-disable-next-line compat/compat */
-  return typeof Symbol === 'function' && is_symbol_default()(Symbol(''));
-}.bind(undefined));
-/**
- * Indicates if `Symbol`exists and creates the correct type.
- * `true`, if it exists and creates the correct type, otherwise `false`.
- *
- * @type boolean
- */
-
-/* harmony default export */ var to_property_key_x_node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm = (node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm_hasSymbolSupport.threw === false && node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm_hasSymbolSupport.value === true);
-
-
 // CONCATENATED MODULE: ./node_modules/to-property-key-x/dist/to-property-key-x.esm.js
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -2323,7 +1979,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
 function toPropertyKey(argument) {
   var key = toPrimitive(argument, String);
-  return to_property_key_x_node_modules_has_symbol_support_x_dist_has_symbol_support_x_esm && _typeof(key) === 'symbol' ? key : ToString(key);
+  return has_symbol_support_x_esm && _typeof(key) === 'symbol' ? key : ToString(key);
 }
 
 
