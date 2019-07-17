@@ -10,10 +10,12 @@ import propertyIsEnumerable from 'property-is-enumerable-x';
  * @throws {TypeError} - If target is null or undefined.
  * @returns {Array} The enumerable own property symbols.
  */
-export default function getOwnEnumerablePropertySymbols(target) {
+const getOwnEnumerablePropertySymbols = function getOwnEnumerablePropertySymbols(target) {
   const object = toObject(target);
 
   return filter(getOPS(object), (symbol) => {
     return propertyIsEnumerable(object, symbol);
   });
-}
+};
+
+export default getOwnEnumerablePropertySymbols;

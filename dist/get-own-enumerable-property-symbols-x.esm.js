@@ -12,7 +12,7 @@ import propertyIsEnumerable from 'property-is-enumerable-x';
  * @returns {Array} The enumerable own property symbols.
  */
 
-export default function getOwnEnumerablePropertySymbols(target) {
+var getOwnEnumerablePropertySymbols = function getOwnEnumerablePropertySymbols(target) {
   var _this = this;
 
   var object = toObject(target);
@@ -21,6 +21,8 @@ export default function getOwnEnumerablePropertySymbols(target) {
 
     return propertyIsEnumerable(object, symbol);
   }.bind(this));
-}
+};
+
+export default getOwnEnumerablePropertySymbols;
 
 //# sourceMappingURL=get-own-enumerable-property-symbols-x.esm.js.map
