@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-08-04T20:30:50.533Z",
+  "date": "2019-08-05T18:40:27.102Z",
   "describe": "",
   "description": "Like Object.getOwnPropertySymbols but gets only enumerable properties.",
   "file": "get-own-enumerable-property-symbols-x.js",
-  "hash": "3b35766f02f539f00dd8",
+  "hash": "22a650005dc440217c80",
   "license": "MIT",
-  "version": "2.0.18"
+  "version": "2.0.19"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -194,33 +194,6 @@ module.exports = function isPrimitive(val) {
 "use strict";
 
 
-var strValue = String.prototype.valueOf;
-var tryStringObject = function tryStringObject(value) {
-	try {
-		strValue.call(value);
-		return true;
-	} catch (e) {
-		return false;
-	}
-};
-var toStr = Object.prototype.toString;
-var strClass = '[object String]';
-var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
-
-module.exports = function isString(value) {
-	if (typeof value === 'string') { return true; }
-	if (typeof value !== 'object') { return false; }
-	return hasToStringTag ? tryStringObject(value) : toStr.call(value) === strClass;
-};
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 var getDay = Date.prototype.getDay;
 var tryDateObject = function tryDateObject(value) {
 	try {
@@ -238,6 +211,33 @@ var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag =
 module.exports = function isDateObject(value) {
 	if (typeof value !== 'object' || value === null) { return false; }
 	return hasToStringTag ? tryDateObject(value) : toStr.call(value) === dateClass;
+};
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var strValue = String.prototype.valueOf;
+var tryStringObject = function tryStringObject(value) {
+	try {
+		strValue.call(value);
+		return true;
+	} catch (e) {
+		return false;
+	}
+};
+var toStr = Object.prototype.toString;
+var strClass = '[object String]';
+var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+
+module.exports = function isString(value) {
+	if (typeof value === 'string') { return true; }
+	if (typeof value !== 'object') { return false; }
+	return hasToStringTag ? tryStringObject(value) : toStr.call(value) === strClass;
 };
 
 
@@ -433,83 +433,6 @@ var attempt = function attempt(fn) {
 /* harmony default export */ var attempt_x_esm = (attempt);
 
 
-// CONCATENATED MODULE: ./node_modules/has-boxed-string-x/dist/has-boxed-string-x.esm.js
-var has_boxed_string_x_esm_string = 'a';
-var boxedString = {}.constructor(has_boxed_string_x_esm_string);
-/**
- * Check failure of by-index access of string characters (IE < 9)
- * and failure of `0 in boxedString` (Rhino).
- *
- * `true` if no failure; otherwise `false`.
- *
- * @type boolean
- */
-
-var hasBoxed = boxedString[0] === has_boxed_string_x_esm_string && 0 in boxedString;
-/* harmony default export */ var has_boxed_string_x_esm = (hasBoxed);
-
-
-// EXTERNAL MODULE: ./node_modules/is-string/index.js
-var is_string = __webpack_require__(2);
-var is_string_default = /*#__PURE__*/__webpack_require__.n(is_string);
-
-// CONCATENATED MODULE: ./node_modules/split-if-boxed-bug-x/dist/split-if-boxed-bug-x.esm.js
-
-
-var EMPTY_STRING = '';
-var strSplit = EMPTY_STRING.split;
-var isStringFn = has_boxed_string_x_esm === false && typeof strSplit === 'function' && is_string_default.a;
-/**
- * This method tests if a value is a string with the boxed bug; splits to an
- * array for iteration; otherwise returns the original value.
- *
- * @param {*} [value] - The value to be tested.
- * @returns {*} An array or characters if value was a string with the boxed bug;
- *  otherwise the value.
- */
-
-var splitIfBoxedBug = function splitIfBoxedBug(value) {
-  return isStringFn && isStringFn(value) ? strSplit.call(value, EMPTY_STRING) : value;
-};
-
-/* harmony default export */ var split_if_boxed_bug_x_esm = (splitIfBoxedBug);
-
-
-// EXTERNAL MODULE: ./node_modules/is-symbol/index.js
-var is_symbol = __webpack_require__(0);
-var is_symbol_default = /*#__PURE__*/__webpack_require__.n(is_symbol);
-
-// CONCATENATED MODULE: ./node_modules/has-symbol-support-x/dist/has-symbol-support-x.esm.js
-var has_symbol_support_x_esm_this = undefined;
-
-function _newArrowCheck(innerThis, boundThis) { if (innerThis !== boundThis) { throw new TypeError("Cannot instantiate an arrow function"); } }
-
-
-
-var hasSymbolSupport = attempt_x_esm(function () {
-  _newArrowCheck(this, has_symbol_support_x_esm_this);
-
-  /* eslint-disable-next-line compat/compat */
-  return typeof Symbol === 'function' && is_symbol_default()(Symbol(''));
-}.bind(undefined));
-/**
- * Indicates if `Symbol`exists and creates the correct type.
- * `true`, if it exists and creates the correct type, otherwise `false`.
- *
- * @type boolean
- */
-
-/* harmony default export */ var has_symbol_support_x_esm = (hasSymbolSupport.threw === false && hasSymbolSupport.value === true);
-
-
-// EXTERNAL MODULE: ./node_modules/is-primitive/index.js
-var is_primitive = __webpack_require__(1);
-var is_primitive_default = /*#__PURE__*/__webpack_require__.n(is_primitive);
-
-// EXTERNAL MODULE: ./node_modules/is-date-object/index.js
-var is_date_object = __webpack_require__(3);
-var is_date_object_default = /*#__PURE__*/__webpack_require__.n(is_date_object);
-
 // CONCATENATED MODULE: ./node_modules/to-boolean-x/dist/to-boolean-x.esm.js
 /**
  * The abstract operation ToBoolean converts argument to a value of type Boolean.
@@ -549,6 +472,33 @@ var toStringTag = function toStringTag(value) {
 /* harmony default export */ var to_string_tag_x_esm = (toStringTag);
 
 
+// EXTERNAL MODULE: ./node_modules/is-symbol/index.js
+var is_symbol = __webpack_require__(0);
+var is_symbol_default = /*#__PURE__*/__webpack_require__.n(is_symbol);
+
+// CONCATENATED MODULE: ./node_modules/has-symbol-support-x/dist/has-symbol-support-x.esm.js
+var has_symbol_support_x_esm_this = undefined;
+
+function _newArrowCheck(innerThis, boundThis) { if (innerThis !== boundThis) { throw new TypeError("Cannot instantiate an arrow function"); } }
+
+
+
+var hasSymbolSupport = attempt_x_esm(function () {
+  _newArrowCheck(this, has_symbol_support_x_esm_this);
+
+  /* eslint-disable-next-line compat/compat */
+  return typeof Symbol === 'function' && is_symbol_default()(Symbol(''));
+}.bind(undefined));
+/**
+ * Indicates if `Symbol`exists and creates the correct type.
+ * `true`, if it exists and creates the correct type, otherwise `false`.
+ *
+ * @type boolean
+ */
+
+/* harmony default export */ var has_symbol_support_x_esm = (hasSymbolSupport.threw === false && hasSymbolSupport.value === true);
+
+
 // CONCATENATED MODULE: ./node_modules/has-to-string-tag-x/dist/has-to-string-tag-x.esm.js
 
 
@@ -563,6 +513,10 @@ var toStringTag = function toStringTag(value) {
 /* eslint-disable-next-line compat/compat */
 is_symbol_default()(Symbol.toStringTag));
 
+
+// EXTERNAL MODULE: ./node_modules/is-primitive/index.js
+var is_primitive = __webpack_require__(1);
+var is_primitive_default = /*#__PURE__*/__webpack_require__.n(is_primitive);
 
 // CONCATENATED MODULE: ./node_modules/to-string-x/dist/to-string-x.esm.js
 
@@ -921,10 +875,10 @@ var string2016 = stringES2016;
 // CONCATENATED MODULE: ./node_modules/trim-left-x/dist/trim-left-x.esm.js
 
 
-var trim_left_x_esm_EMPTY_STRING = '';
+var EMPTY_STRING = '';
 var RegExpCtr = /none/.constructor;
 var reLeft = new RegExpCtr("^[".concat(white_space_x_esm, "]+"));
-var replace = trim_left_x_esm_EMPTY_STRING.replace;
+var replace = EMPTY_STRING.replace;
 /**
  * This method removes whitespace from the start of a string. (ES2019).
  *
@@ -934,7 +888,7 @@ var replace = trim_left_x_esm_EMPTY_STRING.replace;
  */
 
 var trim_left_x_esm_trimStart = function trimStart(string) {
-  return replace.call(require_coercible_to_string_x_esm(string), reLeft, trim_left_x_esm_EMPTY_STRING);
+  return replace.call(require_coercible_to_string_x_esm(string), reLeft, EMPTY_STRING);
 };
 
 /* harmony default export */ var trim_left_x_esm = (trim_left_x_esm_trimStart);
@@ -1107,6 +1061,62 @@ var is_function_x_esm_isFunction = function isFunction(value, allowClass) {
 
 /* harmony default export */ var is_function_x_esm = (is_function_x_esm_isFunction);
 
+
+// CONCATENATED MODULE: ./node_modules/to-string-symbols-supported-x/dist/to-string-symbols-supported-x.esm.js
+
+
+/* eslint-disable-next-line compat/compat */
+
+var pToString = has_symbol_support_x_esm && Symbol.prototype.toString;
+var isSymbolFn = typeof pToString === 'function' && is_symbol_default.a;
+/** @type {Function} */
+
+var to_string_symbols_supported_x_esm_castString = ''.constructor;
+/**
+ * The abstract operation ToString converts argument to a value of type String,
+ * however the specification states that if the argument is a Symbol then a
+ * 'TypeError' is thrown. This version also allows Symbols be converted to
+ * a string. Other uncoercible exotics will still throw though.
+ *
+ * @param {*} [value] - The value to convert to a string.
+ * @returns {string} The converted value.
+ */
+
+var toStringSymbolsSupported = function toStringSymbolsSupported(value) {
+  return isSymbolFn && isSymbolFn(value) ? pToString.call(value) : to_string_symbols_supported_x_esm_castString(value);
+};
+
+/* harmony default export */ var to_string_symbols_supported_x_esm = (toStringSymbolsSupported);
+
+
+// CONCATENATED MODULE: ./node_modules/assert-is-function-x/dist/assert-is-function-x.esm.js
+
+
+
+/**
+ * Tests `callback` to see if it is a function, throws a `TypeError` if it is
+ * not. Otherwise returns the `callback`.
+ *
+ * @param {*} callback - The argument to be tested.
+ * @throws {TypeError} Throws if `callback` is not a function.
+ * @returns {*} Returns `callback` if it is function.
+ */
+
+var assert_is_function_x_esm_assertIsFunction = function assertIsFunction(callback) {
+  if (is_function_x_esm(callback) === false) {
+    var msg = is_primitive_default()(callback) ? to_string_symbols_supported_x_esm(callback) : '#<Object>';
+    throw new TypeError("".concat(msg, " is not a function"));
+  }
+
+  return callback;
+};
+
+/* harmony default export */ var assert_is_function_x_esm = (assert_is_function_x_esm_assertIsFunction);
+
+
+// EXTERNAL MODULE: ./node_modules/is-date-object/index.js
+var is_date_object = __webpack_require__(2);
+var is_date_object_default = /*#__PURE__*/__webpack_require__.n(is_date_object);
 
 // CONCATENATED MODULE: ./node_modules/to-primitive-x/dist/to-primitive-x.esm.js
 
@@ -1576,59 +1586,169 @@ var to_length_x_esm_toLength = function toLength(value) {
 /* harmony default export */ var to_length_x_esm = (to_length_x_esm_toLength);
 
 
-// CONCATENATED MODULE: ./node_modules/to-string-symbols-supported-x/dist/to-string-symbols-supported-x.esm.js
-
-
-/* eslint-disable-next-line compat/compat */
-
-var pToString = has_symbol_support_x_esm && Symbol.prototype.toString;
-var isSymbolFn = typeof pToString === 'function' && is_symbol_default.a;
-/** @type {Function} */
-
-var to_string_symbols_supported_x_esm_castString = ''.constructor;
+// CONCATENATED MODULE: ./node_modules/has-boxed-string-x/dist/has-boxed-string-x.esm.js
+var has_boxed_string_x_esm_string = 'a';
+var boxedString = {}.constructor(has_boxed_string_x_esm_string);
 /**
- * The abstract operation ToString converts argument to a value of type String,
- * however the specification states that if the argument is a Symbol then a
- * 'TypeError' is thrown. This version also allows Symbols be converted to
- * a string. Other uncoercible exotics will still throw though.
+ * Check failure of by-index access of string characters (IE < 9)
+ * and failure of `0 in boxedString` (Rhino).
  *
- * @param {*} [value] - The value to convert to a string.
- * @returns {string} The converted value.
+ * `true` if no failure; otherwise `false`.
+ *
+ * @type boolean
  */
 
-var toStringSymbolsSupported = function toStringSymbolsSupported(value) {
-  return isSymbolFn && isSymbolFn(value) ? pToString.call(value) : to_string_symbols_supported_x_esm_castString(value);
+var hasBoxed = boxedString[0] === has_boxed_string_x_esm_string && 0 in boxedString;
+/* harmony default export */ var has_boxed_string_x_esm = (hasBoxed);
+
+
+// EXTERNAL MODULE: ./node_modules/is-string/index.js
+var is_string = __webpack_require__(3);
+var is_string_default = /*#__PURE__*/__webpack_require__.n(is_string);
+
+// CONCATENATED MODULE: ./node_modules/split-if-boxed-bug-x/dist/split-if-boxed-bug-x.esm.js
+
+
+var split_if_boxed_bug_x_esm_EMPTY_STRING = '';
+var strSplit = split_if_boxed_bug_x_esm_EMPTY_STRING.split;
+var isStringFn = has_boxed_string_x_esm === false && typeof strSplit === 'function' && is_string_default.a;
+/**
+ * This method tests if a value is a string with the boxed bug; splits to an
+ * array for iteration; otherwise returns the original value.
+ *
+ * @param {*} [value] - The value to be tested.
+ * @returns {*} An array or characters if value was a string with the boxed bug;
+ *  otherwise the value.
+ */
+
+var splitIfBoxedBug = function splitIfBoxedBug(value) {
+  return isStringFn && isStringFn(value) ? strSplit.call(value, split_if_boxed_bug_x_esm_EMPTY_STRING) : value;
 };
 
-/* harmony default export */ var to_string_symbols_supported_x_esm = (toStringSymbolsSupported);
+/* harmony default export */ var split_if_boxed_bug_x_esm = (splitIfBoxedBug);
 
 
-// CONCATENATED MODULE: ./node_modules/assert-is-function-x/dist/assert-is-function-x.esm.js
+// CONCATENATED MODULE: ./node_modules/array-any-x/dist/array-any-x.esm.js
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
+
+
+
+
+var performCallback = function performCallback(args) {
+  var _args = _slicedToArray(args, 6),
+      noThis = _args[0],
+      thisArg = _args[1],
+      callBack = _args[2],
+      iterable = _args[3],
+      index = _args[4],
+      object = _args[5];
+
+  var item = iterable[index];
+  return noThis ? callBack(item, index, object) : callBack.call(thisArg, item, index, object);
+};
+
+var array_any_x_esm_getIterableLengthPair = function getIterableLengthPair(object) {
+  var iterable = split_if_boxed_bug_x_esm(object);
+  return [iterable, to_length_x_esm(iterable.length)];
+}; // eslint-disable jsdoc/check-param-names
+// noinspection JSCommentMatchesSignature
 
 /**
- * Tests `callback` to see if it is a function, throws a `TypeError` if it is
- * not. Otherwise returns the `callback`.
+ * This method tests whether some element in the array passes the test
+ * implemented by the provided function.
  *
- * @param {*} callback - The argument to be tested.
- * @throws {TypeError} Throws if `callback` is not a function.
- * @returns {*} Returns `callback` if it is function.
+ * @function any
+ * @param {Array} array - The array to iterate over.
+ * @param {Function} callBack - Function to test for each element.
+ * @param {*} [thisArg] - Value to use as this when executing callback.
+ * @throws {TypeError} If array is null or undefined.
+ * @throws {TypeError} If callBack is not a function.
+ * @returns {boolean} `true` if the callback function returns a truthy value for
+ *  any array element; otherwise, `false`.
  */
+// eslint-enable jsdoc/check-param-names
 
-var assert_is_function_x_esm_assertIsFunction = function assertIsFunction(callback) {
-  if (is_function_x_esm(callback) === false) {
-    var msg = is_primitive_default()(callback) ? to_string_symbols_supported_x_esm(callback) : '#<Object>';
-    throw new TypeError("".concat(msg, " is not a function"));
+
+var array_any_x_esm_any = function any(array, callBack
+/* , thisArg */
+) {
+  var object = to_object_x_esm(array); // If no callback function or if callback is not a callable function
+
+  assert_is_function_x_esm(callBack);
+
+  var _getIterableLengthPai = array_any_x_esm_getIterableLengthPair(object),
+      _getIterableLengthPai2 = _slicedToArray(_getIterableLengthPai, 2),
+      iterable = _getIterableLengthPai2[0],
+      length = _getIterableLengthPai2[1];
+  /* eslint-disable-next-line prefer-rest-params,no-void */
+
+
+  var thisArg = arguments.length > 2 ? arguments[2] : void 0;
+  var noThis = typeof thisArg === 'undefined';
+
+  if (length) {
+    for (var index = 0; index < length; index += 1) {
+      if (performCallback([noThis, thisArg, callBack, iterable, index, object])) {
+        return true;
+      }
+    }
   }
 
-  return callback;
+  return false;
 };
 
-/* harmony default export */ var assert_is_function_x_esm = (assert_is_function_x_esm_assertIsFunction);
+/* harmony default export */ var array_any_x_esm = (array_any_x_esm_any);
+
+
+// CONCATENATED MODULE: ./node_modules/array-all-x/dist/array-all-x.esm.js
+ // eslint-disable jsdoc/check-param-names
+// noinspection JSCommentMatchesSignature
+
+/**
+ * This method executes a provided function once for each array element.
+ *
+ * @function all
+ * @param {Array} array - The array to iterate over.
+ * @param {Function} callBack - Function to execute for each element.
+ * @param {*} [thisArg] - Value to use as this when executing callback.
+ * @throws {TypeError} If array is null or undefined.
+ * @throws {TypeError} If callBack is not a function.
+ */
+// eslint-enable jsdoc/check-param-names
+
+var array_all_x_esm_all = function all(array, callBack
+/* , thisArg */
+) {
+  var iteratee = function iteratee() {
+    /* eslint-disable-next-line prefer-rest-params,babel/no-invalid-this */
+    callBack.call(this, arguments[0], arguments[1], arguments[2]);
+  };
+  /* eslint-disable-next-line prefer-rest-params */
+
+
+  array_any_x_esm(array, iteratee, arguments[2]);
+};
+
+/* harmony default export */ var array_all_x_esm = (array_all_x_esm_all);
 
 
 // CONCATENATED MODULE: ./node_modules/array-filter-x/dist/array-filter-x.esm.js
+function array_filter_x_esm_slicedToArray(arr, i) { return array_filter_x_esm_arrayWithHoles(arr) || array_filter_x_esm_iterableToArrayLimit(arr, i) || array_filter_x_esm_nonIterableRest(); }
+
+function array_filter_x_esm_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function array_filter_x_esm_iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function array_filter_x_esm_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -1649,7 +1769,7 @@ var array_filter_x_esm_test1 = function test1() {
 
 var array_filter_x_esm_test2 = function test2() {
   var spy = '';
-  var res = attempt_x_esm.call({}.constructor('abc'), nativeFilter, function spyAdd2(item, index) {
+  var res = attempt_x_esm.call(to_object_x_esm('abc'), nativeFilter, function spyAdd2(item, index) {
     spy += item;
     return index === 1;
   });
@@ -1683,6 +1803,15 @@ var array_filter_x_esm_test4 = function test4() {
   return res.threw === false && res.value && res.value.length === 0 && spy === 6;
 };
 
+var getTest5Result = function getTest5Result(args) {
+  var _args = array_filter_x_esm_slicedToArray(args, 3),
+      res = _args[0],
+      div = _args[1],
+      spy = _args[2];
+
+  return res.threw === false && res.value && res.value.length === 1 && res.value[0] === div && spy === div;
+};
+
 var array_filter_x_esm_test5 = function test5() {
   var doc = typeof document !== 'undefined' && document;
 
@@ -1695,7 +1824,7 @@ var array_filter_x_esm_test5 = function test5() {
       spy = item;
       return item;
     });
-    return res.threw === false && res.value && res.value.length === 1 && res.value[0] === div && spy === div;
+    return getTest5Result([res, div, spy]);
   }
 
   return true;
@@ -1704,15 +1833,18 @@ var array_filter_x_esm_test5 = function test5() {
 var array_filter_x_esm_test6 = function test6() {
   var isStrict = function returnIsStrict() {
     /* eslint-disable-next-line babel/no-invalid-this */
-    return true.constructor(this) === false;
+    return to_boolean_x_esm(this) === false;
   }();
 
   if (isStrict) {
     var spy = null;
-    var res = attempt_x_esm.call([1], nativeFilter, function testThis() {
+
+    var testThis = function testThis() {
       /* eslint-disable-next-line babel/no-invalid-this */
       spy = typeof this === 'string';
-    }, 'x');
+    };
+
+    var res = attempt_x_esm.call([1], nativeFilter, testThis, 'x');
     return res.threw === false && res.value && res.value.length === 0 && spy === true;
   }
 
@@ -1724,55 +1856,54 @@ var array_filter_x_esm_test7 = function test7() {
   var fn = 'return nativeFilter.call("foo", function (_, __, context) {' + 'if (castBoolean(context) === false || typeof context !== "object") {' + 'spy.value = true;}});';
   /* eslint-disable-next-line no-new-func */
 
-  var res = attempt_x_esm(Function('nativeFilter', 'spy', 'castBoolean', fn), nativeFilter, spy, true.constructor);
+  var res = attempt_x_esm(Function('nativeFilter', 'spy', 'castBoolean', fn), nativeFilter, spy, to_boolean_x_esm);
   return res.threw === false && res.value && res.value.length === 0 && spy.value !== true;
 };
 
-var isWorking = true.constructor(nativeFilter) && array_filter_x_esm_test1() && array_filter_x_esm_test2() && array_filter_x_esm_test3() && array_filter_x_esm_test4() && array_filter_x_esm_test5() && array_filter_x_esm_test6() && array_filter_x_esm_test7();
+var isWorking = to_boolean_x_esm(nativeFilter) && array_filter_x_esm_test1() && array_filter_x_esm_test2() && array_filter_x_esm_test3() && array_filter_x_esm_test4() && array_filter_x_esm_test5() && array_filter_x_esm_test6() && array_filter_x_esm_test7();
 
-var array_filter_x_esm_patchedFilter = function patchedFilter() {
-  return function filter(array, callBack
-  /* , thisArg */
-  ) {
-    require_object_coercible_x_esm(array);
-    var args = [assert_is_function_x_esm(callBack)];
+var patchedFilter = function filter(array, callBack
+/* , thisArg */
+) {
+  require_object_coercible_x_esm(array);
+  var args = [assert_is_function_x_esm(callBack)];
 
-    if (arguments.length > 2) {
-      /* eslint-disable-next-line prefer-rest-params,prefer-destructuring */
-      args[1] = arguments[2];
-    }
+  if (arguments.length > 2) {
+    /* eslint-disable-next-line prefer-rest-params,prefer-destructuring */
+    args[1] = arguments[2];
+  }
 
-    return nativeFilter.apply(array, args);
-  };
+  return nativeFilter.apply(array, args);
 };
 
-var array_filter_x_esm_implementation = function implementation() {
-  return function filter(array, callBack
-  /* , thisArg */
-  ) {
-    var object = to_object_x_esm(array); // If no callback function or if callback is not a callable function
+var implementation = function filter(array, callBack
+/* , thisArg */
+) {
+  var object = to_object_x_esm(array); // If no callback function or if callback is not a callable function
 
-    assert_is_function_x_esm(callBack);
-    var iterable = split_if_boxed_bug_x_esm(object);
-    var length = to_length_x_esm(iterable.length);
-    /* eslint-disable-next-line prefer-rest-params,no-void */
+  assert_is_function_x_esm(callBack);
+  var result = [];
 
-    var thisArg = arguments.length > 2 ? arguments[2] : void 0;
-    var noThis = typeof thisArg === 'undefined';
-    var result = [];
+  var predicate = function predicate() {
+    /* eslint-disable-next-line prefer-rest-params */
+    var i = arguments[1];
+    /* eslint-disable-next-line prefer-rest-params */
 
-    for (var i = 0; i < length; i += 1) {
-      if (i in iterable) {
-        var item = iterable[i];
+    if (i in arguments[2]) {
+      /* eslint-disable-next-line prefer-rest-params */
+      var item = arguments[0];
+      /* eslint-disable-next-line babel/no-invalid-this */
 
-        if (noThis ? callBack(item, i, object) : callBack.call(thisArg, item, i, object)) {
-          result[result.length] = item;
-        }
+      if (callBack.call(this, item, i, object)) {
+        result[result.length] = item;
       }
     }
-
-    return result;
   };
+  /* eslint-disable-next-line prefer-rest-params */
+
+
+  array_all_x_esm(object, predicate, arguments[2]);
+  return result;
 };
 /**
  * This method creates a new array with all elements that pass the test
@@ -1786,7 +1917,7 @@ var array_filter_x_esm_implementation = function implementation() {
  * @returns {Array} A new array with the elements that pass the test.
  */
 
-var $filter = isWorking ? array_filter_x_esm_patchedFilter() : array_filter_x_esm_implementation();
+var $filter = isWorking ? patchedFilter : implementation;
 /* harmony default export */ var array_filter_x_esm = ($filter);
 
 
