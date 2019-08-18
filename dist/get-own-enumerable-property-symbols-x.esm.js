@@ -1,5 +1,3 @@
-function _newArrowCheck(innerThis, boundThis) { if (innerThis !== boundThis) { throw new TypeError("Cannot instantiate an arrow function"); } }
-
 import toObject from 'to-object-x';
 import filter from 'array-filter-x';
 import getOPS from 'get-own-property-symbols-x';
@@ -13,14 +11,10 @@ import propertyIsEnumerable from 'property-is-enumerable-x';
  */
 
 var getOwnEnumerablePropertySymbols = function getOwnEnumerablePropertySymbols(target) {
-  var _this = this;
-
   var object = toObject(target);
-  return filter(getOPS(object), function (symbol) {
-    _newArrowCheck(this, _this);
-
+  return filter(getOPS(object), function iteratee(symbol) {
     return propertyIsEnumerable(object, symbol);
-  }.bind(this));
+  });
 };
 
 export default getOwnEnumerablePropertySymbols;

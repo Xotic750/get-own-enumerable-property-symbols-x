@@ -13,7 +13,7 @@ import propertyIsEnumerable from 'property-is-enumerable-x';
 const getOwnEnumerablePropertySymbols = function getOwnEnumerablePropertySymbols(target) {
   const object = toObject(target);
 
-  return filter(getOPS(object), (symbol) => {
+  return filter(getOPS(object), function iteratee(symbol) {
     return propertyIsEnumerable(object, symbol);
   });
 };
