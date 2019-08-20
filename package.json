@@ -1,6 +1,6 @@
 {
   "name": "get-own-enumerable-property-symbols-x",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Like Object.getOwnPropertySymbols but gets only enumerable properties.",
   "homepage": "https://github.com/Xotic750/get-own-enumerable-property-symbols-x",
   "author": {
@@ -52,9 +52,9 @@
     "url": "https://github.com/Xotic750/get-own-enumerable-property-symbols-x/issues"
   },
   "dependencies": {
-    "array-filter-x": "^3.1.0",
-    "get-own-property-symbols-x": "^2.1.0",
-    "property-is-enumerable-x": "^2.1.0",
+    "array-filter-x": "^3.1.1",
+    "get-own-property-symbols-x": "^2.1.1",
+    "property-is-enumerable-x": "^2.1.1",
     "to-object-x": "^2.2.0"
   },
   "devDependencies": {
