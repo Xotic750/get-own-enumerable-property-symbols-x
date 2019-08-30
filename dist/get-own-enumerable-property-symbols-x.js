@@ -2,7 +2,7 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-08-28T17:29:56.583Z",
+  "date": "2019-08-30T22:13:54.019Z",
   "describe": "",
   "description": "Like Object.getOwnPropertySymbols but gets only enumerable properties.",
   "file": "get-own-enumerable-property-symbols-x.js",
